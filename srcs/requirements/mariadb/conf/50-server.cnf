@@ -1,0 +1,4 @@
+[mariadb]
+user = mysql
+port = 3306
+log_error = /var/log/mysql/error.log
