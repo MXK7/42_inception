@@ -9,3 +9,5 @@ mariadb -uroot -e "CREATE USER IF NOT EXISTS ${DB_USER} '@localhost' IDENTIFIED 
 # Donne tous les privilèges aux users crée précédemment.
 mariadb -uroot -e "GRANT ALL PRIVILEGES ON ${DB} TO ${DB_USER} '@'%' IDENTIFIED BY ${DB_USER_PSW};"
 
+# 
+mariadb-admin -uroot -p$MYSQL_ROOT_PASSWORD --wait-for-all-slaves shutdown
