@@ -1,0 +1,37 @@
+[mysqld]
+# Paramètres de base
+datadir = /var/lib/mysql
+socket = /run/mysqld/mysqld.sock
+bind_address = 0.0.0.0
+port = 3306
+user = mysql
+
+# Sécurité critique
+skip-networking = false
+skip-grant-tables = FALSE
+skip-external-locking
+
+# Sécurité renforcée
+local-infile = 0
+skip-show-database
+symbolic-links = 0
+
+# Authentification
+# Encodage
+character-set-server = utf8mb4
+collation-server = utf8mb4_general_ci
+
+# Journalisation
+log_error = /var/log/mysql/error.log
+log_warnings = 2
+
+# Optimisation de performance
+max_connections = 100
+connect_timeout = 5
+wait_timeout = 600
+max_allowed_packet = 64M
+thread_cache_size = 128
+sort_buffer_size = 4M
+bulk_insert_buffer_size = 16M
+tmp_table_size = 32M
+max_heap_table_size = 32M
